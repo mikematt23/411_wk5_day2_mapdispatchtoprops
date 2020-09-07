@@ -27,6 +27,8 @@ class AddCar extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }
+        this.props.addCar(payload)
+        this.setState({ open: false })
         payload.id = this.props.carTotal + 1
         delete payload.open
         console.log("THE CAR", payload)
